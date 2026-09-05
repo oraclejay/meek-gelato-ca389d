@@ -12,5 +12,5 @@ export async function fetchBookings(userId: string) {
 
 export async function createBookingRequest(payload: any) {
   // Posts a BookingRequest-shaped payload to the backend booking API
-  return axios.post('http://localhost:8080/api/booking/request', payload).then((r) => r.data);
+  return axios.post('https://village-bike-travel-service.onrender.com/api/booking/request', payload).then((r) => r.data);
 }

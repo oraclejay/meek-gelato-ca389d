@@ -101,7 +101,7 @@ export default function Home() {
       return;
     }
 
-    fetch('http://localhost:8081/api/auth/me', {
+    fetch('https://common-oauth-service.onrender.com/api/auth/me', {
       credentials: 'include',
     })
       .then((response) => {

@@ -17,8 +17,9 @@ export default function LoginPage() {
   const [otp, setOtp] = useState('');
 
   const loginWithGoogle = () => {
-    window.location.href = 'http://localhost:8081/oauth2/authorization/google';
-  //http://localhost:8081/oauth2/authorization/google
+    window.location.href = 'https://common-oauth-service.onrender.com/oauth2/authorization/google';
+  //working in local--'http://localhost:8081/oauth2/authorization/google'
+    //http://localhost:8081/oauth2/authorization/google
     //http://localhost:8081/login/oauth2/code/google
   };
 
@@ -39,7 +40,7 @@ export default function LoginPage() {
         Name: name,
       };
 
-      const response = await fetch('http://localhost:8082/api/otp/send-otp', {
+      const response = await fetch('https://common-mobileotp-service.onrender.com/api/otp/send-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export default function LoginPage() {
         Code: otp,
       };
 
-      const response = await fetch('http://localhost:8082/api/otp/verify-otp', {
+      const response = await fetch('https://common-mobileotp-service.onrender.com/api/otp/verify-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -436,7 +437,7 @@ export default function LoginPage() {
             </form>
 
             <div className="ride-meta">
-              New rider? <a href="http://localhost:8080/api/auth/createuser">Create account</a>
+              New rider? <a href="https://common-oauth-service.onrender.com/api/auth/createuser">Create account</a>
             </div>
           </div>
         </section>

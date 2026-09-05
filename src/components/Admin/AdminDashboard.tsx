@@ -100,7 +100,7 @@ export default function AdminDashboard() {
     const payloadActualImage = typeof payload.actualImage === 'string' ? payload.actualImage : '';
 
     try {
-      const res = await fetch('http://localhost:8080/api/user/newuser', {
+      const res = await fetch('https://village-bike-travel-service.onrender.com/api/user/newuser', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
     const { phone, email, full_name } = userSearch;
     try {
       if (phone) {
-        const res = await fetch(`http://localhost:8080/api/user/findbyphone/${encodeURIComponent(phone)}`);
+        const res = await fetch(`https://village-bike-travel-service.onrender.com/api/user/findbyphone/${encodeURIComponent(phone)}`);
         if (!res.ok) throw new Error('Not found');
         const data = await res.json();
         mapResponseToForm(data);
@@ -176,7 +176,7 @@ export default function AdminDashboard() {
       }
 
       if (email) {
-        const res = await fetch(`http://localhost:8080/api/user/findbyemail?email=${encodeURIComponent(email)}`);
+        const res = await fetch(`https://village-bike-travel-service.onrender.com/api/user/findbyemail?email=${encodeURIComponent(email)}`);
         if (!res.ok) throw new Error('Not found');
         const data = await res.json();
         mapResponseToForm(data);

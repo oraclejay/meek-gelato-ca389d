@@ -12,5 +12,5 @@ export async function addBike(payload: any) {
 
 export async function fetchAllBikeRides() {
   // Calls the backend endpoint that returns all bike ride details
-  return axios.get('http://localhost:8080/api/bikeride/allbikeride').then((r) => r.data);
+  return axios.get('https://village-bike-travel-service.onrender.com/api/bikeride/allbikeride').then((r) => r.data);
 }
