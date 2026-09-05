@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 interface User {
   fullName: string;
@@ -9,7 +9,7 @@ interface User {
 }
 
 const navItems = [
-  { label: 'Home', to: '/Home', icon: '🏠' },
+  { label: 'Home', to: '/home', icon: '🏠' },
   { label: 'Login', to: '/login', icon: '🔐' },
   { label: 'Booking', to: '/booking', icon: '📍' },
   { label: 'My Bookings', to: '/my-bookings', icon: '🧾' },
@@ -173,7 +173,7 @@ export default function Home() {
               <div>
                 <strong>Guest</strong>
                 <small>
-                  <a href="/login">Login here</a>
+                  <NavLink to="/login">Login here</NavLink>
                 </small>
               </div>
             </>
